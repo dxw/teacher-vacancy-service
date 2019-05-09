@@ -210,6 +210,8 @@ ActiveRecord::Schema.define(version: 2019_05_16_213012) do
     t.datetime "total_get_more_info_clicks_updated_at"
     t.integer "working_patterns", array: true
     t.boolean "pro_rata_salary"
+    t.integer "listed_elsewhere"
+    t.integer "hired_status"
     t.index ["expires_on"], name: "index_vacancies_on_expires_on"
     t.index ["first_supporting_subject_id"], name: "index_vacancies_on_first_supporting_subject_id"
     t.index ["leadership_id"], name: "index_vacancies_on_leadership_id"

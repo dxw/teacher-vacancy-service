@@ -91,6 +91,23 @@ class Vacancy < ApplicationRecord
   enum status: %i[published draft trashed]
   enum working_pattern: %i[full_time part_time] # Deprecated
   array_enum working_patterns: WORKING_PATTERN_OPTIONS
+  enum listed_elsewhere: %i[
+    listed_paid
+    listed_free
+    listed_mix
+    not_listed
+    listed_dont_know
+  ]
+  enum hired_status: %i[
+    hired_tvs
+    hired_other_free
+    hired_paid
+    hired_free
+    not_filled_ongoing
+    not_filled_readvertised
+    not_filled_not_looking
+    hired_dont_know
+  ]
 
   belongs_to :school, optional: false
   belongs_to :subject, optional: true

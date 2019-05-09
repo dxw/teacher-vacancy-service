@@ -22,6 +22,8 @@ FactoryBot.define do
     benefits { Faker::Lorem.sentence }
     newly_qualified_teacher { true }
     reference { SecureRandom.uuid }
+    hired_status { nil }
+    listed_elsewhere { nil }
 
     trait :fail_minimum_validation do
       job_title { Faker::Job.title[0..2] }
