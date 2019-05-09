@@ -11,7 +11,7 @@ class SchoolVacanciesPresenter < BasePresenter
   end
 
   def self.valid_types
-    %i[published pending draft expired]
+    %i[published pending draft expired awaiting_feedback]
   end
 
   private
@@ -30,5 +30,9 @@ class SchoolVacanciesPresenter < BasePresenter
 
   def published
     @school.vacancies.live.order(sort.column => sort.order)
+  end
+
+  def awaiting_feedback
+    @school.vacancies.awaiting_feedback.order(sort.column => sort.order)
   end
 end

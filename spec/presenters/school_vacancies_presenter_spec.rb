@@ -122,6 +122,25 @@ RSpec.describe SchoolVacanciesPresenter do
     end
   end
 
+  context 'when type is awaiting_feedback' do
+    let(:type) { 'awaiting_feedback' }
+
+    before(:all) do
+      vacancy_with_feedback = @expired_vacancies[0]
+      vacancy_with_feedback.listed_elsewhere = :listed_paid
+      vacancy_with_feedback.hired_status = :hired_tvs
+      vacancy_with_feedback.save
+    end
+
+    it 'returns the vacancy type' do
+      expect(presenter.vacancy_type).to eq(:awaiting_feedback)
+    end
+
+    it 'returns published vacancies' do
+      expect(presenter.vacancies.count).to eq(@expired_vacancies.count - 1)
+    end
+  end
+
   context 'when type is not recognised' do
     let(:type) { 'something' }
 
