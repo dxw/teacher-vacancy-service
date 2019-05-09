@@ -39,6 +39,7 @@ en:
     key_info: 'Key information'
     awaiting_feedback: 'Expired Job Status'
     awaiting_feedback_intro: 'Teaching Vacancies need more data to improve the quality of the service and it would be great if you can help provide status of expired jobs so that we can learn how to make the service better.'
+    feedback_submitted: 'Thank you very much. Feedback is submitted 🎉'
     salary: 'Salary'
     publish_on: 'Date posted'
     expires_on: 'Closing date'
