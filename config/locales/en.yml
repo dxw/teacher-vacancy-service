@@ -37,9 +37,13 @@ en:
     heading: 'Find a job in teaching'
     sort_by: 'Sort by:'
     key_info: 'Key information'
+    awaiting_feedback: 'Expired Job Status'
+    awaiting_feedback_intro: 'Teaching Vacancies need more data to improve the quality of the service and it would be great if you can help provide status of expired jobs so that we can learn how to make the service better.'
     salary: 'Salary'
     publish_on: 'Date posted'
     expires_on: 'Closing date'
+    job_filled: 'Job Filled?'
+    listed_elsewhere: 'Listed Elsewhere?'
     page_views: 'Total views'
     get_more_info_clicks: 'Total get more info clicks'
     working_patterns: 'Working pattern'
@@ -216,6 +220,21 @@ en:
       education_phase_divider: 'or'
       nqt_suitable: 'Suitable for NQTs'
       clear_filters: 'Reset search'
+    feedback:
+      listed_elsewhere:
+        listed_paid: 'Yes, on one or more paid services'
+        listed_free: Yes, but only for free'
+        listed_mix: 'Yes, a mix of paid and free listings'
+        not_listed: 'No'
+        listed_dont_know: "I don't know"
+      hired_status:
+        hired_tvs: 'Yes'
+        hired_other_free: 'No, we hired through another free listing'
+        hired_paid: 'No, we hired through a paid service'
+        not_filled_ongoing: 'No, recruitment is ongoing'
+        not_filled_readvertised: 'No, the vacancy was re-advertised'
+        not_filled_not_looking: 'No, we no longer want to fill the vacancy'
+        hired_dont_know: "I don't know"
   feedback:
     page_title: 'Feedback'
     heading: 'Give feedback'
@@ -339,6 +358,7 @@ en:
     continue: 'Continue'
     create_job: 'Create a job'
     change: 'Change'
+    submit: 'Submit'
 
   messages:
     jobs:

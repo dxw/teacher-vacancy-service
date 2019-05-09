@@ -1,0 +1,9 @@
+%tr.govuk-table__row.vacancy[vacancy]
+  %td.govuk-table__cell
+    = form_for vacancy, html: { id: vacancy.id } do |f| end
+    = link_to vacancy.job_title, vacancy.preview_path, class: 'govuk-link view-vacancy-link'
+  %td.govuk-table__cell= vacancy.publish_on
+  %td.govuk-table__cell= vacancy.expires_on
+  %td.govuk-table__cell= select_tag 'vacancy[hired_status]', options_for_select(hired_status_options, nil), form: vacancy.id, include_blank: '--', class: 'govuk-select form-control form-control-block'
+  %td.govuk-table__cell= select_tag 'vacancy[listed_elsewhere]', options_for_select(listed_elsewhere_options, nil), form: vacancy.id, include_blank: '--', class: 'govuk-select form-control form-control-block'
+  %td.govuk-table__cell= submit_tag t('buttons.submit'), form: vacancy.id, class: 'govuk-button mb0'

@@ -18,6 +18,14 @@ module VacanciesHelper
     School.phases.keys.map { |key| [key.humanize, key] }
   end
 
+  def listed_elsewhere_options
+    Vacancy.listed_elsewheres.keys.map { |k| [t("jobs.feedback.listed_elsewhere.#{k}"), k] }
+  end
+
+  def hired_status_options
+    Vacancy.hired_statuses.keys.map { |k| [t("jobs.feedback.hired_status.#{k}"), k] }
+  end
+
   def link_to_sort_by(title, column:, order:, sort:)
     if column == sort.column
       order = sort.reverse_order
