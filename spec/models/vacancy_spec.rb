@@ -411,6 +411,16 @@ RSpec.describe Vacancy, type: :model do
         expect(Vacancy.published_on_count(1.month.ago)).to eq(published_some_other_day.count)
       end
     end
+
+    describe '#awaiting_feedback' do
+      it 'gets all vacancies awaiting feedback' do
+        expired_and_awaiting = create_list(:vacancy, 2, :expired)
+        create_list(:vacancy, 3, :expired, listed_elsewhere: :listed_paid, hired_status: :hired_tvs)
+        create_list(:vacancy, 3, :published_slugged)
+
+        expect(Vacancy.awaiting_feedback.count).to eq(expired_and_awaiting.count)
+      end
+    end
   end
 
   describe 'delegate school_name' do

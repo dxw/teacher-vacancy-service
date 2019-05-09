@@ -131,6 +131,7 @@ class Vacancy < ApplicationRecord
   scope :pending, (-> { published.where('publish_on > ?', Time.zone.today) })
   scope :expired, (-> { published.where('expires_on < ?', Time.zone.today) })
   scope :live, (-> { published.where('publish_on <= ?', Time.zone.today).where('expires_on >= ?', Time.zone.today) })
+  scope :awaiting_feedback, (-> { expired.where(listed_elsewhere: nil, hired_status: nil) })
 
   paginates_per 10
 
