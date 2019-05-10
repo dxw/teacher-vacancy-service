@@ -1,6 +1,6 @@
 %tr.govuk-table__row.vacancy[vacancy]
   %td.govuk-table__cell
-    = form_for vacancy, html: { id: vacancy.id }, url: school_job_statistics_path(job_id: vacancy.id) do |f| end
+    = form_with model: vacancy, html: { id: vacancy.id, class: 'submit_feedback', data: { success_message: t('jobs.feedback_submitted'), all_submitted_message: t('jobs.feedback_all_submitted') } }, url: school_job_statistics_path(job_id: vacancy.id) do |f| end
     = link_to vacancy.job_title, vacancy.preview_path, class: 'govuk-link view-vacancy-link'
   %td.govuk-table__cell= vacancy.publish_on
   %td.govuk-table__cell= vacancy.expires_on

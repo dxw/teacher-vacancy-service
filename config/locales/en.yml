@@ -41,6 +41,7 @@ en:
     awaiting_feedback_intro: 'Teaching Vacancies need more data to improve the quality of the service and it would be great if you can help provide status of expired jobs so that we can learn how to make the service better.'
     no_awaiting_feedback_jobs: 'There are no vacancies waiting for your feedback at the moment. Please come back later.'
     feedback_submitted: 'Thank you very much. Feedback is submitted 🎉'
+    feedback_all_submitted: 'Thank you very much and congratulations! You have submitted all the feedback!'
     salary: 'Salary'
     publish_on: 'Date posted'
     expires_on: 'Closing date'

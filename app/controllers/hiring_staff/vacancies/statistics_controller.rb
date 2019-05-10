@@ -3,6 +3,8 @@ class HiringStaff::Vacancies::StatisticsController < HiringStaff::Vacancies::App
     vacancy = Vacancy.find(vacancy_id)
     vacancy.update(statistics_params)
 
+    return if request.format.js?
+
     flash[:success] = I18n.t('jobs.feedback_submitted')
 
     redirect_to jobs_with_type_school_path(type: :awaiting_feedback)
