@@ -37,6 +37,20 @@ RSpec.feature 'Adding feedback to a vacancy' do
       expect(vacancy.hired_status).to eq('hired_tvs')
       expect(vacancy.listed_elsewhere).to eq('listed_paid')
     end
+
+    scenario 'when an option is not selected' do
+      visit jobs_with_type_school_path(type: :awaiting_feedback)
+
+      select I18n.t('jobs.feedback.hired_status.hired_tvs'), from: 'vacancy_hired_status'
+
+      click_on I18n.t('buttons.submit')
+
+      expect(page).to have_content(I18n.t('jobs.feedback_error'))
+      expect(page).to have_content(vacancy.job_title)
+
+      expect(vacancy.hired_status).to eq(nil)
+      expect(vacancy.listed_elsewhere).to eq(nil)
+    end
   end
 
   context 'when there are no vacancies awaiting feedback' do

@@ -1,4 +1,20 @@
 $(document).on('turbolinks:load', function(){
+
+
+  $('.submit_feedback').on('submit', function(event) {
+    var valid = true;
+    var id = $(event.target).attr('id');
+
+    $('select[form="'+ id +'"]').each(function() {
+      if ($(this).val() == '') {
+        valid = false;
+        $(this).addClass('govuk-input--error');
+      }
+    })
+
+    return valid;
+  })
+
   $('.submit_feedback').on('ajax:success', function(event) {
     form = $(event.target);
     notification = $('.notification');

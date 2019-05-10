@@ -6,7 +6,7 @@
 
   - if presenter.vacancies.any?
 
-    %table{class: 'vacancies govuk-table govuk-!-margin-top-4'}
+    %table{class: 'vacancies govuk-table govuk-!-margin-top-4', id: 'awaiting_feedback'}
       %thead.govuk-table__head
         %tr.govuk-table__row
           %th.govuk-table__header= table_header_sort_by(t('jobs.job_title'), 'expired', column: 'job_title', sort: @sort)
