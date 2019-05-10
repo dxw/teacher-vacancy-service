@@ -4,6 +4,11 @@
   %ul.govuk-tabs__list.tab-list{ class: 'govuk-!-margin-top-6' }
     - SchoolVacanciesPresenter.valid_types.each do |t|
       %li.govuk-tabs__list-item
-        = link_to t("jobs.#{t}_jobs"), jobs_with_type_school_path(t), class: "govuk-tabs__tab #{@vacancy_presenter.vacancy_type == t ? 'govuk-tabs__tab--selected' : ''}"
+        - if t == :awaiting_feedback
+          = link_to jobs_with_type_school_path(t), class: "govuk-tabs__tab #{@vacancy_presenter.vacancy_type == t ? 'govuk-tabs__tab--selected' : ''}" do
+            = t("jobs.#{t}_jobs")
+            = awaiting_feedback_badge(@school)
+        - else
+          = link_to t("jobs.#{t}_jobs"), jobs_with_type_school_path(t), class: "govuk-tabs__tab #{@vacancy_presenter.vacancy_type == t ? 'govuk-tabs__tab--selected' : ''}"
 
   = render partial: "vacancies_#{@vacancy_presenter.vacancy_type}", locals: { presenter: @vacancy_presenter }

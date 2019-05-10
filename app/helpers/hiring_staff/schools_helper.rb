@@ -17,4 +17,11 @@ module HiringStaff::SchoolsHelper
   def school_vacancy_params(overwrite = {})
     params.merge(overwrite).permit(school_vacancy_params_whitelist)
   end
+
+  def awaiting_feedback_badge(school)
+    count = school.vacancies.awaiting_feedback.count
+    return if count.zero?
+
+    tag.span count, class: 'notification'
+  end
 end

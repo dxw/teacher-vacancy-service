@@ -1,0 +1,8 @@
+span.notification {
+  background-color: $govuk-link-colour;
+  color: govuk-colour('white');
+  @include govuk-font($size: 19);
+  border-radius: 50%;
+  margin-left: govuk-spacing(1);
+  padding: 0 govuk-spacing(1);
+}
