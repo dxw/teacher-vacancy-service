@@ -4,6 +4,7 @@ class HiringStaff::SchoolsController < HiringStaff::BaseController
     @school = SchoolPresenter.new(current_school)
     @sort = VacancySort.new.update(column: params[:sort_column], order: params[:sort_order])
     @vacancy_presenter = SchoolVacanciesPresenter.new(@school, @sort, params[:type])
+    @awaiting_feedback_count = @school.vacancies.awaiting_feedback.count
   end
 
   def edit

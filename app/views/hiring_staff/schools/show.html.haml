@@ -1,5 +1,9 @@
 - content_for :page_title_prefix, @school.name
 
+- if @awaiting_feedback_count.positive?
+  .flash.notice#awaiting_notice
+    You have <span class='count'>#{@awaiting_feedback_count}</span> vacancies awaiting feedback
+
 .school.govuk-grid-row
   .govuk-grid-column-full
     %h1.govuk-heading-l.mb0

@@ -7,7 +7,7 @@
         - if t == :awaiting_feedback
           = link_to jobs_with_type_school_path(t), class: "govuk-tabs__tab #{@vacancy_presenter.vacancy_type == t ? 'govuk-tabs__tab--selected' : ''}" do
             = t("jobs.#{t}_jobs")
-            = awaiting_feedback_badge(@school)
+            = awaiting_feedback_badge(@awaiting_feedback_count)
         - else
           = link_to t("jobs.#{t}_jobs"), jobs_with_type_school_path(t), class: "govuk-tabs__tab #{@vacancy_presenter.vacancy_type == t ? 'govuk-tabs__tab--selected' : ''}"
 

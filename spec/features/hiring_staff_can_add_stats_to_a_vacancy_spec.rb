@@ -19,6 +19,12 @@ RSpec.feature 'Adding feedback to a vacancy' do
       expect(page).to have_selector('span.notification', text: 1)
     end
 
+    scenario 'hiring staff can see notice of vacancies awaiting feedback' do
+      visit school_path
+
+      expect(page).to have_selector('#awaiting_notice .count', text: 1)
+    end
+
     scenario 'feedback can be added to a vacancy' do
       visit jobs_with_type_school_path(type: :awaiting_feedback)
 
