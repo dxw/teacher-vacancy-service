@@ -227,7 +227,7 @@ en:
     feedback:
       listed_elsewhere:
         listed_paid: 'Yes, on one or more paid services'
-        listed_free: Yes, but only for free'
+        listed_free: 'Yes, but only for free'
         listed_mix: 'Yes, a mix of paid and free listings'
         not_listed: 'No'
         listed_dont_know: "I don't know"
