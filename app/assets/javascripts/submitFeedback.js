@@ -25,8 +25,12 @@ $(document).on('turbolinks:load', function(){
 
     if (count > 0) {
       row = form.parents('tr');
+      if (count == 1) {
+        notice_count.text('1 vacancy');
+      } else {
+        notice_count.text(count + ' vacancies');
+      }
       notification.text(count);
-      notice_count.text(count);
       text = form.data('successMessage');
       row.html('<td class="govuk-table__cell" colspan="6">'+ text +'</td>');
       row.fadeOut(3000, function() {
