@@ -1,6 +1,6 @@
 
 %section.govuk-tabs__panel
-  %h2.govuk-heading-m= t('jobs.awaiting_feedback')
+  %h2.govuk-heading-m= t('jobs.awaiting_feedback_jobs')
 
   %p.govuk-body=t('jobs.awaiting_feedback_intro')
 
@@ -20,5 +20,4 @@
           = render partial: 'vacancy_awaiting_feedback', locals: { vacancy: vacancy, school: presenter.school }
 
   - else
-    %p.govuk-body-l= t("jobs.no_awaiting_feedback_jobs")
-
+    %p.govuk-body-l= t("jobs.no_awaiting_feedback")

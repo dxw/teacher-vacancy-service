@@ -37,17 +37,16 @@ en:
     heading: 'Find a job in teaching'
     sort_by: 'Sort by:'
     key_info: 'Key information'
-    awaiting_feedback: 'Expired Job Status'
-    awaiting_feedback_intro: 'Teaching Vacancies need more data to improve the quality of the service and it would be great if you can help provide status of expired jobs so that we can learn how to make the service better.'
-    no_awaiting_feedback_jobs: 'There are no vacancies waiting for your feedback at the moment. Please come back later.'
+    awaiting_feedback_intro: Submit feedback on your expired jobs so that we can use this data to learn how to make the service better.
+    no_awaiting_feedback: 'There are no jobs waiting for your feedback at the moment.'
     feedback_submitted: 'Thank you very much. Feedback is submitted 🎉'
-    feedback_error: There was a problem submitting your feedback. Please make sure both options are selected
-    feedback_all_submitted: 'Thank you very much and congratulations! You have submitted all the feedback!'
+    feedback_error: There was a problem submitting your feedback. Please make sure you have selected an answer for both questions.
+    feedback_all_submitted: 'Thank you very much! You have submitted all the feedback!'
     salary: 'Salary'
     publish_on: 'Date posted'
     expires_on: 'Closing date'
-    job_filled: 'Job Filled?'
-    listed_elsewhere: 'Listed Elsewhere?'
+    job_filled: 'Job filled on Teaching Vacancies?'
+    listed_elsewhere: 'Listed elsewhere?'
     page_views: 'Total views'
     get_more_info_clicks: 'Total get more info clicks'
     working_patterns: 'Working pattern'
@@ -126,6 +125,7 @@ en:
     pending_jobs: Scheduled jobs
     draft_jobs: Draft jobs
     expired_jobs: Expired jobs
+    awaiting_feedback_jobs: Jobs awaiting feedback
     expired_on: Expired on
     no_published_jobs: You currently have no published jobs
     no_expired_jobs: You currently have no expired jobs
@@ -236,8 +236,8 @@ en:
         hired_other_free: 'No, we hired through another free listing'
         hired_paid: 'No, we hired through a paid service'
         not_filled_ongoing: 'No, recruitment is ongoing'
-        not_filled_readvertised: 'No, the vacancy was re-advertised'
-        not_filled_not_looking: 'No, we no longer want to fill the vacancy'
+        not_filled_readvertised: 'No, the job was re-advertised'
+        not_filled_not_looking: 'No, we no longer want to fill the job'
         hired_dont_know: "I don't know"
   feedback:
     page_title: 'Feedback'
