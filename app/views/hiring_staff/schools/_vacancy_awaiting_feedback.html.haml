@@ -1,7 +1,7 @@
 %tr.govuk-table__row.vacancy[vacancy]
   %td.govuk-table__cell
     = form_with model: vacancy, html: { id: vacancy.id, class: 'submit_feedback', data: { success_message: t('jobs.feedback_submitted'), all_submitted_message: t('jobs.feedback_all_submitted') } }, url: school_job_statistics_path(job_id: vacancy.id) do |f| end
-    = link_to vacancy.job_title, vacancy.preview_path, class: 'govuk-link view-vacancy-link'
+    = link_to vacancy.job_title, vacancy.preview_path, class: 'govuk-link view-vacancy-link', id: 'job-title'
   %td.govuk-table__cell= vacancy.publish_on
   %td.govuk-table__cell= vacancy.expires_on
   %td.govuk-table__cell= select_tag 'vacancy[hired_status]', options_for_select(hired_status_options, nil), form: vacancy.id, include_blank: '--', class: 'govuk-select form-control form-control-block'
