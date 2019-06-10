@@ -43,7 +43,7 @@ $(document).on('turbolinks:load', function(){
       table.remove();
       feedback_intro.remove();
       text = form.data('allSubmittedMessage');
-      $('section.govuk-tabs__panel').append('<p class="govuk-body govuk-!-font-size-27">' + text + '</p>');
+      $('section.govuk-tabs__panel').append('<p class="govuk-body govuk-!-font-size-19">' + text + '</p>');
     }
   });
 });
