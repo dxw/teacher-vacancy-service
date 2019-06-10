@@ -2,7 +2,7 @@
 %section.govuk-tabs__panel
   %h2.govuk-heading-m= t('jobs.awaiting_feedback_jobs')
 
-  %p.govuk-body=t('jobs.awaiting_feedback_intro')
+  %p.govuk-body#awaiting_feedback_intro=t('jobs.awaiting_feedback_intro')
 
   - if presenter.vacancies.any?
 

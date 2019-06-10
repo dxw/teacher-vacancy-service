@@ -37,11 +37,11 @@ en:
     heading: 'Find a job in teaching'
     sort_by: 'Sort by:'
     key_info: 'Key information'
-    awaiting_feedback_intro: Submit feedback on your expired jobs so that we can use this data to learn how to make the service better.
+    awaiting_feedback_intro: 'Please tell us if you filled these expired jobs through Teaching Vacancies, and whether you listed them elsewhere. Your feedback will help us improve the service.'
     no_awaiting_feedback: 'There are no jobs waiting for your feedback at the moment.'
     feedback_submitted: 'Thank you very much. Feedback is submitted 🎉'
     feedback_error: There was a problem submitting your feedback. Please make sure you have selected an answer for both questions.
-    feedback_all_submitted: 'Thank you very much! You have submitted all the feedback!'
+    feedback_all_submitted: 'You have provided feedback on all your expired jobs. Thank you for sharing this information, which will help us to improve the service. If you have general comments on the service you can share them with us using <a href="/feedback/new">this feedback form.</a>'
     salary: 'Salary'
     publish_on: 'Date posted'
     expires_on: 'Closing date'

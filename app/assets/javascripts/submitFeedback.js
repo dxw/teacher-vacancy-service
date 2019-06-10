@@ -22,6 +22,7 @@ $(document).on('turbolinks:load', function(){
     var table = $('table.vacancies')
     var notice = $('#awaiting_notice')
     var notice_count = notice.find('.count');
+    var feedback_intro = $('#awaiting_feedback_intro')
 
     if (count > 0) {
       row = form.parents('tr');
@@ -40,6 +41,7 @@ $(document).on('turbolinks:load', function(){
       notification.remove();
       notice.remove();
       table.remove();
+      feedback_intro.remove();
       text = form.data('allSubmittedMessage');
       $('section.govuk-tabs__panel').append('<p class="govuk-body govuk-!-font-size-27">' + text + '</p>');
     }

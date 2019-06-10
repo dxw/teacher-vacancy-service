@@ -1,5 +1,6 @@
 require 'rails_helper'
-RSpec.feature 'Adding feedback to a vacancy' do
+require 'sanitize'
+RSpec.feature 'Adding feedback to a vacancy', js: true do
   let(:school) { create(:school) }
   before(:each) do
     stub_hiring_staff_auth(urn: school.urn)
@@ -55,7 +56,7 @@ RSpec.feature 'Adding feedback to a vacancy' do
       expect(vacancy.listed_elsewhere).to eq('listed_paid')
     end
 
-    scenario 'when an option is not selected' do
+    scenario 'when an option is not selected', js: false do
       visit jobs_with_type_school_path(type: :awaiting_feedback)
 
       within('tr', text: vacancy.job_title) do
@@ -69,10 +70,33 @@ RSpec.feature 'Adding feedback to a vacancy' do
       expect(vacancy.hired_status).to eq(nil)
       expect(vacancy.listed_elsewhere).to eq(nil)
     end
+
+    scenario 'When all feedback has been submitted' do
+      visit jobs_with_type_school_path(type: :awaiting_feedback)
+
+      expect(page).to have_selector('#job-title.view-vacancy-link', count: 2)
+      expect(page).to have_selector('#job-title.view-vacancy-link', text: vacancy.job_title)
+      expect(page).to have_selector('#job-title.view-vacancy-link', text: another_vacancy.job_title)
+
+      within('tr', text: vacancy.job_title) do
+        select I18n.t('jobs.feedback.hired_status.hired_tvs'), from: 'vacancy_hired_status'
+        select I18n.t('jobs.feedback.listed_elsewhere.listed_paid'), from: 'vacancy_listed_elsewhere'
+        click_on I18n.t('buttons.submit')
+      end
+
+      within('tr', text: another_vacancy.job_title) do
+        select I18n.t('jobs.feedback.hired_status.hired_tvs'), from: 'vacancy_hired_status'
+        select I18n.t('jobs.feedback.listed_elsewhere.listed_paid'), from: 'vacancy_listed_elsewhere'
+        click_on I18n.t('buttons.submit')
+      end
+
+      expect(page).to have_content(Sanitize.clean(I18n.t('jobs.feedback_all_submitted')))
+      expect(page).to_not have_content(I18n.t('jobs.awaiting_feedback_intro'))
+    end
   end
 
   context 'when there are no vacancies awaiting feedback' do
-    scenario 'hiring staff can see notification badge' do
+    scenario 'hiring staff can not see notification badge' do
       visit school_path
 
       expect(page).to_not have_selector('span.notification')
