@@ -125,7 +125,7 @@ RSpec.describe SchoolVacanciesPresenter do
   context 'when type is awaiting_feedback' do
     let(:type) { 'awaiting_feedback' }
 
-    before(:all) do
+    before do
       vacancy_with_feedback = @expired_vacancies[0]
       vacancy_with_feedback.listed_elsewhere = :listed_paid
       vacancy_with_feedback.hired_status = :hired_tvs
